@@ -35,7 +35,7 @@ def get():
                 count = count + 1
                 line = f.readline()
                 line = ''.join(line).strip('\n')
-                cmdstr = "./nmap -T4 -A -v --min-parallelism 30 -Pn --script asn-query "+line+" -oX /tempdata/"+line+".xml"
+                cmdstr = "nmap -T4 -A -v --min-parallelism 30 -Pn --script asn-query "+line+" -oX /scanresult/"+line+".xml"
                 os.system(cmdstr)
 				
             with open('count.log', 'w') as fil:
